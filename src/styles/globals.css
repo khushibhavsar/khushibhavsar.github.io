@@ -1,0 +1,176 @@
+/* ============================================================
+   globals.css — Design tokens, reset, and base typography
+   ============================================================ */
+
+/* ---------- CSS Custom Properties (Design Tokens) ---------- */
+:root {
+  /* Color palette: soft natural / botanical */
+  --clr-cream:       #faf7f0;
+  --clr-parchment:   #f2ede0;
+  --clr-sand:        #e8dfc8;
+  --clr-sage-light:  #c8d8b4;
+  --clr-sage:        #8fb878;
+  --clr-sage-mid:    #6a9e56;
+  --clr-forest:      #3d7a32;
+  --clr-forest-deep: #2d5a27;
+  --clr-bark:        #5c4a2a;
+  --clr-text:        #2a2a1e;
+  --clr-text-muted:  #6b6b52;
+  --clr-white:       #ffffff;
+
+  /* Typography */
+  --font-display: 'Playfair Display', Georgia, serif;
+  --font-body:    'DM Sans', system-ui, sans-serif;
+
+  /* Spacing scale */
+  --space-xs:  0.25rem;
+  --space-sm:  0.5rem;
+  --space-md:  1rem;
+  --space-lg:  2rem;
+  --space-xl:  4rem;
+  --space-2xl: 7rem;
+
+  /* Transitions */
+  --ease-spring: cubic-bezier(0.34, 1.56, 0.64, 1);
+  --ease-smooth: cubic-bezier(0.4, 0, 0.2, 1);
+  --transition:  0.35s var(--ease-smooth);
+
+  /* Shadows */
+  --shadow-sm: 0 2px 8px rgba(45, 90, 39, 0.08);
+  --shadow-md: 0 6px 24px rgba(45, 90, 39, 0.12);
+  --shadow-lg: 0 16px 48px rgba(45, 90, 39, 0.16);
+
+  /* Border radius */
+  --radius-sm: 6px;
+  --radius-md: 14px;
+  --radius-lg: 28px;
+  --radius-full: 9999px;
+}
+
+/* ---------- CSS Reset ---------- */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: 16px;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  font-family: var(--font-body);
+  font-weight: 300;
+  color: var(--clr-text);
+  background-color: var(--clr-cream);
+  line-height: 1.7;
+  overflow-x: hidden;
+  /* Subtle paper texture via CSS noise */
+  background-image:
+    radial-gradient(circle at 20% 50%, rgba(143, 184, 120, 0.06) 0%, transparent 60%),
+    radial-gradient(circle at 80% 20%, rgba(200, 216, 180, 0.08) 0%, transparent 50%);
+}
+
+img, svg {
+  display: block;
+  max-width: 100%;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+ul {
+  list-style: none;
+}
+
+button {
+  cursor: pointer;
+  border: none;
+  background: none;
+  font-family: inherit;
+}
+
+/* ---------- Scrollbar styling ---------- */
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: var(--clr-parchment); }
+::-webkit-scrollbar-thumb {
+  background: var(--clr-sage);
+  border-radius: var(--radius-full);
+}
+
+/* ---------- Selection colour ---------- */
+::selection {
+  background: var(--clr-sage-light);
+  color: var(--clr-forest-deep);
+}
+
+/* ---------- Utility classes ---------- */
+.container {
+  width: 100%;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 var(--space-lg);
+}
+
+.section {
+  padding: var(--space-2xl) 0;
+}
+
+.section-label {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-sm);
+  font-family: var(--font-body);
+  font-size: 0.72rem;
+  font-weight: 500;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--clr-sage-mid);
+  margin-bottom: var(--space-md);
+}
+
+.section-label::before {
+  content: '';
+  display: inline-block;
+  width: 24px;
+  height: 1.5px;
+  background: var(--clr-sage-mid);
+}
+
+.section-title {
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: 600;
+  line-height: 1.2;
+  color: var(--clr-text);
+  margin-bottom: var(--space-xl);
+}
+
+/* ---------- Fade-in-up animation ---------- */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(28px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.fade-in {
+  animation: fadeInUp 0.7s var(--ease-smooth) both;
+}
+
+/* ---------- Responsive helpers ---------- */
+@media (max-width: 768px) {
+  :root {
+    --space-2xl: 4.5rem;
+    --space-xl:  2.5rem;
+  }
+  .container { padding: 0 var(--space-md); }
+}
