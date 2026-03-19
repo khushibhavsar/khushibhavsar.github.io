@@ -27,7 +27,7 @@ const SKILL_GROUPS = [
   {
     icon: '💡',
     name: 'Design & Content Tools',
-    items: ['Figma', 'UI/UX Design', 'Wordpress', 'Problem Canva', 'Adobe Photoshop', 'MS '],
+    items: ['Figma', 'UI/UX Design', 'Wordpress', 'Problem Canva', 'Adobe Photoshop', 'MS Office'],
   },
 ];
 
