@@ -12,7 +12,7 @@ const SKILL_GROUPS = [
   {
     icon: '🌐',
     name: 'Coding Languages',
-    items: ['Java', 'JavaScript', 'JavaScript', 'Python', 'HTML/CSS'],
+    items: ['Java', 'JavaScript', 'Python', 'HTML/CSS'],
   },
   {
     icon: '🎮',
