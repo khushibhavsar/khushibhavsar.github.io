@@ -84,8 +84,8 @@ const Contact = () => {
           <span className="section-label">Contact</span>
           <h2 className="section-title">Let's grow<br /><em style={{ fontStyle: 'italic' }}>something together</em></h2>
           <p className="contact__tagline">
-            Whether you'd like to collaborate on a project, chat about software engineering,
-            or just say hello — my inbox is always open. 🌿
+            Whether you'd like to collaborate on a project, talk about anything tech related,
+            or just say hello — I'd be happy to chat!
           </p>
 
           <div className="contact__links">
